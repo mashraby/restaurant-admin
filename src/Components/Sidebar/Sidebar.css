@@ -1,0 +1,27 @@
+.sideBar {
+  width: 350px;
+  height: 100vh;
+  background-color: rgb(4, 4, 37);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul .sideBar-link {
+  margin: 0;
+  padding: 20px 40px;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.sideBar-link.active {
+  text-decoration: underline;
+  color: blue;
+}
