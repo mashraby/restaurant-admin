@@ -85,9 +85,9 @@ export default function Foods() {
             </thead>
             <tbody>
               {foods?.foodsAll &&
-                foods?.foodsAll.map((e) => (
+                foods?.foodsAll.map((e, i) => (
                   <tr key={e.id}>
-                    <th scope="row">{e.id}</th>
+                    <th scope="row">{i + 1}</th>
                     <td>
                       <h5>{e.name}</h5>
                     </td>

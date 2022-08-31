@@ -32,10 +32,6 @@ export default function Categories() {
   const { categories } = useContext(QueryContext);
 
   const [newCategorie] = useMutation(NEW_CATEGORIE, {
-    onError: (err) =>
-      alert(
-        "Serverda muammo bo'lganligi uchun categorielar ro'yhatiga qo'shilmadi :("
-      ),
     onCompleted: (data) => {
       alert("Categorie muvafaqiyatli qo'shildi :)");
       window.location.reload();
@@ -43,8 +39,8 @@ export default function Categories() {
   });
 
   const [deleteCategorie] = useMutation(DELETE_CATEGORIE, {
-    onCompleted: (data) => alert("Muvaffaqiyatli o'chirildi :)"),
-    onError: (err) => console.log(err),
+    onCompleted: () => alert("Muvaffaqiyatli o'chirildi :)"),
+    onError: (err) => alert("Categorie o'chirilmadi"),
   });
 
   const handleCategorie = (e) => {
@@ -88,9 +84,9 @@ export default function Categories() {
             </thead>
             <tbody>
               {categories?.categories &&
-                categories?.categories.map((e) => (
+                categories?.categories.map((e, i) => (
                   <tr key={e.id}>
-                    <th scope="row">{e.id}</th>
+                    <th scope="row">{i + 1}</th>
                     <td>
                       <h5>{e.name}</h5>
                     </td>

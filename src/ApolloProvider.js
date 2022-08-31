@@ -5,7 +5,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://localhost:9000",
+  uri: "https://desolate-springs-49271.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 

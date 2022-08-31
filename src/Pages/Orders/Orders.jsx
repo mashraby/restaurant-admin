@@ -38,9 +38,9 @@ export default function Orders() {
           </thead>
           <tbody>
             {data?.orders &&
-              data?.orders.map((e) => (
+              data?.orders.map((e, i) => (
                 <tr key={e.id}>
-                  <th scope="row">{e.id}</th>
+                  <th scope="row">{i + 1}</th>
                   <td>
                     <h5>{e.client}</h5>
                   </td>
